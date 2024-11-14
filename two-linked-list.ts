@@ -6,9 +6,9 @@ class TwoLinkedNode<T> {
     ) {}
 }
 
-class TwoLinkedList<T> {
-    public head: TwoLinkedNode<T> | null = null;
-    public tail: TwoLinkedNode<T> | null = null;
+class TwoLinkedList {
+    public head: TwoLinkedNode<any> | null = null;
+    public tail: TwoLinkedNode<any> | null = null;
 
     print() {
         let current = this.head;
@@ -62,7 +62,7 @@ class TwoLinkedList<T> {
                 }
                 if (!deleteAllSame) return;
             }
-            current = current.next as TwoLinkedNode<T>;
+            current = current.next as TwoLinkedNode<any>;
         }
     }
 }
