@@ -1,6 +1,6 @@
 const MIN_RUN = 32;
 
-function insertionSort<T>(arr: T[], left: number, right: number): void {
+const insertionSort = <T>(arr: T[], left: number, right: number): void => {
   for (let i = left + 1; i <= right; i++) {
     const key = arr[i];
     let j = i - 1;
@@ -11,9 +11,9 @@ function insertionSort<T>(arr: T[], left: number, right: number): void {
     }
     arr[j + 1] = key;
   }
-}
+};
 
-function merge<T>(arr: T[], left: number, mid: number, right: number): void {
+const merge = <T>(arr: T[], left: number, mid: number, right: number): void => {
   const leftLen = mid - left + 1;
   const rightLen = right - mid;
 
@@ -49,9 +49,9 @@ function merge<T>(arr: T[], left: number, mid: number, right: number): void {
     j++;
     k++;
   }
-}
+};
 
-function timSort<T>(arr: T[]): void {
+const timSort = <T>(arr: T[]): void => {
   const n = arr.length;
 
   for (let i = 0; i < n; i += MIN_RUN) {
@@ -71,7 +71,7 @@ function timSort<T>(arr: T[]): void {
     }
     size *= 2;
   }
-}
+};
 
 const arr = [0, 12, 444, 5235, 222, -324, -4, -42, 34, 2, 33, -34, -4, 4, 4];
 timSort(arr);

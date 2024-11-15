@@ -1,12 +1,8 @@
 class FIFONode<T> {
-  
-    constructor(
-        public value: T,
-        public next: FIFONode<T> | null = null
-    ) {}
-  }
-  
-  class QueueFIFO<T> {
+  constructor(public value: T, public next: FIFONode<T> | null = null) {}
+}
+
+class QueueFIFO<T> {
   private head: FIFONode<T> | null = null;
   private tail: FIFONode<T> | null = null;
   private _size: number = 0;
@@ -47,8 +43,17 @@ class FIFONode<T> {
   }
 }
 
-const fifoQueue = new QueueFIFO<number>();
-fifoQueue.enqueue(1);
-fifoQueue.enqueue(2);
-console.log(fifoQueue.dequeue());
-console.log(fifoQueue.dequeue());
+const ffq = new QueueFIFO<number>();
+console.log(ffq.size());
+console.log(ffq.isEmpty());
+ffq.enqueue(1);
+console.log(ffq.peek());
+ffq.enqueue(2);
+console.log(ffq.isEmpty());
+console.log(ffq.size());
+ffq.enqueue(3);
+console.log(ffq.dequeue());
+console.log(ffq.dequeue());
+console.log(ffq.dequeue());
+console.log(ffq.isEmpty());
+console.log(ffq.size());

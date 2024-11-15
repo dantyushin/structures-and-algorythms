@@ -1,5 +1,4 @@
 class ListNode<T> {
-
   constructor(
     public key: string,
     public value: T,
@@ -8,10 +7,11 @@ class ListNode<T> {
 }
 
 class HashTable<T> {
-
   constructor(
     private size: number = 16,
-    private table: Array<ListNode<T> | null> = new Array<ListNode<T> | null>(size).fill(null)
+    private table: Array<ListNode<T> | null> = new Array<ListNode<T> | null>(
+      size
+    ).fill(null)
   ) {}
 
   private hash(key: string): number {
