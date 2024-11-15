@@ -5,10 +5,10 @@ const mergeSort = (arr: number[]): number[] => {
     const left = arr.slice(0, middle);
     const right = arr.slice(middle);
 
-    return merge(mergeSort(left), mergeSort(right));
+    return merge1(mergeSort(left), mergeSort(right));
 }
 
-const merge = (left: number[], right: number[]): number[] => {
+const merge1 = (left: number[], right: number[]): number[] => {
     const result: number[] = [];
     let leftIndex = 0;
     let rightIndex = 0;

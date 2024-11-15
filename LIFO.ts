@@ -1,16 +1,16 @@
-class MyNode<T> {
+class MyNodeForLIFO<T> {
     constructor(
       public value: T,
-      public next: MyNode<T> | null = null
+      public next: MyNodeForLIFO<T> | null = null
     ) {}
   }
   
   class StackLIFO<T> {
-    private top: MyNode<T> | null = null;
+    private top: MyNodeForLIFO<T> | null = null;
     private _size: number = 0;
   
     push(item: T): void {
-      const node = new MyNode(item);
+      const node = new MyNodeForLIFO(item);
       node.next = this.top;
       this.top = node;
       this._size++;

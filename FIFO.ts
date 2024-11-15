@@ -1,10 +1,9 @@
 class FIFONode<T> {
-    value: T;
-    next: FIFONode<T> | null = null;
   
-    constructor(value: T) {
-      this.value = value;
-    }
+    constructor(
+        public value: T,
+        public next: FIFONode<T> | null = null
+    ) {}
   }
   
   class QueueFIFO<T> {

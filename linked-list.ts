@@ -1,18 +1,18 @@
-class MyNode {
+class MyNodeForLinkedList {
     constructor(
         public data: any,
-        public next: MyNode | null
+        public next: MyNodeForLinkedList | null
     ) {}
 }
 
 class LinkedList {
     constructor(
-        public head: MyNode | null = null,
-        public tail: MyNode | null = null
+        public head: MyNodeForLinkedList | null = null,
+        public tail: MyNodeForLinkedList | null = null
     ) {}
 
     addAtTail(data: any) {
-        const newnode = new MyNode(data, null);
+        const newnode = new MyNodeForLinkedList(data, null);
         if (!this.head) {
             this.head = newnode;
             this.tail = newnode;
@@ -23,7 +23,7 @@ class LinkedList {
     }
 
     addAtHead(data: any) {
-        const newnode = new MyNode(data, this.head);
+        const newnode = new MyNodeForLinkedList(data, this.head);
         if (!this.head) {
           this.head = newnode;
           this.tail = newnode;

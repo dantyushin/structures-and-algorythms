@@ -1,22 +1,18 @@
 class ListNode<T> {
-  key: string;
-  value: T;
-  next: ListNode<T> | null = null;
 
-  constructor(key: string, value: T) {
-    this.key = key;
-    this.value = value;
-  }
+  constructor(
+    public key: string,
+    public value: T,
+    public next: ListNode<T> | null = null
+  ) {}
 }
 
 class HashTable<T> {
-  private table: Array<ListNode<T> | null>;
-  private size: number;
 
-  constructor(size: number = 16) {
-    this.size = size;
-    this.table = new Array(size).fill(null);
-  }
+  constructor(
+    private size: number = 16,
+    private table: Array<ListNode<T> | null> = new Array<ListNode<T> | null>(size).fill(null)
+  ) {}
 
   private hash(key: string): number {
     let hash = 0;
