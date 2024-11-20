@@ -9,9 +9,7 @@ class ListNode<T> {
 class HashTable<T> {
   constructor(
     private size: number = 16,
-    private table: Array<ListNode<T> | null> = new Array<ListNode<T> | null>(
-      size
-    ).fill(null)
+    private table: Array<ListNode<T> | null> = new Array(size).fill(null)
   ) {}
 
   private hash(key: string): number {
@@ -83,3 +81,26 @@ console.log(hashTable.get("age"));
 hashTable.delete("name");
 hashTable.delete("name");
 console.log(hashTable.get("name"));
+
+const simpleHashTable: { [key: string]: any } = {
+  set(key: any, value: any) {
+    const index = JSON.stringify(key);
+    this[index] = value;
+  },
+
+  get(key: any) {
+    const index = JSON.stringify(key);
+    return this[index];
+  },
+
+  delete(key: any) {
+    const index = JSON.stringify(key);
+    if (this[index]) delete this[index];
+  },
+};
+simpleHashTable.set({ name: 123 }, { value: 321 });
+simpleHashTable.set({ name: 13 }, { value: 31 });
+console.log(simpleHashTable.get({ name: 123 }));
+console.log(simpleHashTable.get({ name: 13 }));
+simpleHashTable.delete({ name: 13 });
+console.log(simpleHashTable.get({ name: 13 }));
